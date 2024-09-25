@@ -12,17 +12,28 @@
     <dialog>
         <form method="dialog">
             <div class="input-pair">
-                <label for="">Book title</label>
-                <input type="text">
+                <label for="title">Book title</label>
+                <input type="text" id="title">
             </div>
             <div class="input-pair">
-                <label for="">Author</label>
-                <input type="text">
+                <label for="author">Author</label>
+                <input type="text" id="author">
             </div>
             <div class="input-pair">
-                <label for="">Page count</label>
-                <input type="text">
+                <label for="pageCount">Page count</label>
+                <input type="text" id="pageCount">
             </div>
+            <fieldset>
+                <legend>Have you read this book?</legend>
+                <div>
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="yes" name="read" value="Yes">
+                </div>
+                <div>
+                    <label for="no">No</label>
+                    <input type="radio" id="no" name="read" value="no">
+                </div>
+            </fieldset>
             <button class="submitButton" type="submit">Submit</button>
         </form>
     </dialog>
