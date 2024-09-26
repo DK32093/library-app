@@ -1,11 +1,11 @@
-const myLibrary = [{title: "The Hobbit", author: "J.R.R. Tolkien", pages: "800", read: "Yes"},
-    {title: "The Hobbit", author: "J.R.R. Tolkien", pages: "800", read: "Yes"},
-    {title: "The Hobbit", author: "J.R.R. Tolkien", pages: "800", read: "Yes"}
+const myLibrary = [{title: "Gardens of the Moon", author: "Steven Erikson", pages: "712", read: "Yes"},
+    {title: "Deadhouse Gates", author: "Steven Erikson", pages: "943", read: "Yes"},
+    {title: "Memories of Ice", author: "Steven Erikson", pages: "1187", read: "Yes"}
 ];
+
 const dialog = document.querySelector("dialog");
 const bookButton = document.querySelector(".bookButton");
 const submitButton = document.querySelector(".submitButton");
-const removeButton = document.getElementsByClassName(".removeButton");
 const libDisplay = document.querySelector('.library-display');
 
 function Book(title, author, pages, read) {
@@ -35,20 +35,24 @@ function displayLibrary() {
         let author = document.createElement("h3");
         let pages = document.createElement("p");
         let read = document.createElement("p");
-        let remove = document.createElement("button")
+        let remove = document.createElement("button");
+        let tog = document.createElement("button");
         remove.setAttribute("class", "removeButton");
         remove.setAttribute("data", i); // add index as attribute
+        tog.setAttribute("class", "togButton");
+        tog.setAttribute("data", i);
         title.textContent = book.title;
         author.textContent = "by " + book.author;
         pages.textContent = "Page count: " + book.pages;
         read.textContent = "Read: " + book.read;
-        remove.textContent = "Remove";
-        card.append(title, author, pages, read, remove);
+        remove.textContent = "X";
+        tog.textContent = "Change read status"
+        card.append(title, author, pages, read, tog, remove);
     }
 }
 
 function removeBook(e) {
-    const ind = Number(e.target.getAttribute("data"));
+    let ind = Number(e.target.getAttribute("data"));
     const target = e.target.closest(".removeButton");
     if(target) {
         myLibrary.splice(ind, 1);
@@ -56,8 +60,22 @@ function removeBook(e) {
     }
 }
 
+function toggleRead(e) {
+    let ind = Number(e.target.getAttribute("data"));
+    const target = e.target.closest(".togButton");
+    if(target) {
+        if(myLibrary[ind].read === "No") {
+            myLibrary[ind].read = "Yes"
+        } else {
+            myLibrary[ind].read = "No"
+        }
+        displayLibrary();
+    }
+}
+
 libDisplay.addEventListener("click", (e) => {
     removeBook(e);
+    toggleRead(e);
 })
 
 // Show the new book form

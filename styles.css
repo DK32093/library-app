@@ -1,7 +1,112 @@
-.book-card {
-    border: 1px solid #0a55ea;
-    height: 100px;
+
+html, body {
+    height: 100%;
+}
+
+.header {
+    background-color: #0f766e;
+    height: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.welcome {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.myLibText {
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 4rem;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.bookButton {
+    background: #022c22;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* New book form */
+dialog {
+    padding: 1rem;
+    background-color: #022c22;
+    color: white;
+}
+
+.newBookForm {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.form-req {
+    font-style: italic;
+}
+
+fieldset {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.library-display {
+    height: 100%;
+    background-color: #14b8a6;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.book-card {
+    flex-shrink: 0;
+    background-color: #a7f3d0;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 10px #6c6c6c;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 0.8fr 0.5fr;
+    gap: 1.5rem;
+    min-width: 0;
+    min-height: 0;
+    align-items: center;
+    padding: 1.5rem;
+    color: #022c22;
+}
+
+h2 {
+    font-size: 1.5rem;
+    min-width: 0;
+}
+
+h3 {
+    -min-width: 0;
+}
+
+.togButton {
+    border: 0.2rem solid #022c22;
+    border-radius: 1rem;
+    background: none;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.removeButton {
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: 800;
 }

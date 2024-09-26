@@ -10,34 +10,42 @@
 </head>
 <body>
     <dialog>
-        <form method="dialog">
+        <form class="newBookForm" method="dialog">
+            <p class="form-title">Add a new book!</p>
+            <p class="form-req">All fields are required</p>
             <div class="input-pair">
                 <label for="title">Book title</label>
-                <input type="text" id="title">
+                <input type="text" id="title" required>
             </div>
             <div class="input-pair">
                 <label for="author">Author</label>
-                <input type="text" id="author">
+                <input type="text" id="author" required>
             </div>
             <div class="input-pair">
                 <label for="pageCount">Page count</label>
-                <input type="text" id="pageCount">
+                <input type="text" id="pageCount" required>
             </div>
             <fieldset>
                 <legend>Have you read this book?</legend>
                 <div>
                     <label for="yes">Yes</label>
-                    <input type="radio" id="yes" name="read" value="Yes">
+                    <input type="radio" id="yes" name="read" value="Yes" required>
                 </div>
                 <div>
                     <label for="no">No</label>
-                    <input type="radio" id="no" name="read" value="No">
+                    <input type="radio" id="no" name="read" value="No" required>
                 </div>
             </fieldset>
-            <button class="submitButton" type="submit">Submit</button>
+            <button class="submitButton" type="submit">Add to library</button>
         </form>
     </dialog>
-    <button class="bookButton">Add new book</button>
+    <div class="header">
+        <div class="header-text">
+            <p class="welcome">Welcome</p>
+            <p class="myLibText">My Library</p>
+        </div>
+        <button class="bookButton">Add new book</button>
+    </div>
     <div class="library-display"></div>
 </body>
 </html>
