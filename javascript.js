@@ -44,14 +44,16 @@ function displayLibrary() {
         read.textContent = "Read: " + book.read;
         remove.textContent = "Remove";
         card.append(title, author, pages, read, remove);
-        console.log(i);
     }
 }
 
 function removeBook(e) {
     const ind = Number(e.target.getAttribute("data"));
-    myLibrary.splice(ind, 1);
-    displayLibrary();
+    const target = e.target.closest(".removeButton");
+    if(target) {
+        myLibrary.splice(ind, 1);
+        displayLibrary();
+    }
 }
 
 libDisplay.addEventListener("click", (e) => {
