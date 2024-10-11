@@ -8,11 +8,13 @@ const bookButton = document.querySelector(".bookButton");
 const submitButton = document.querySelector(".submitButton");
 const libDisplay = document.querySelector('.library-display');
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read
+    }
 }
 
 function addBookToLibrary() {
@@ -89,6 +91,5 @@ submitButton.addEventListener("click", () => {
   addBookToLibrary();
   displayLibrary();
 });
-
 
 displayLibrary();
